@@ -52,7 +52,17 @@ defmodule TsOban.MixProject do
       {:dns_cluster, "~> 0.1.1"},
       {:plug_cowboy, "~> 2.5"},
       {:bamboo, "~> 2.3.0"},
-      {:oban, "~> 2.16"}
+      {:oban, "~> 2.16"},
+      {:phoenix_multi_select, "~> 0.1"},
+      {:json, "~> 1.4.1"},
+      {:poison, "~> 5.0.0"},
+      {:kino_db, "~> 0.2.1"},
+      {:nimble_parsec, "~> 1.2"},
+      {:kino_ecto, git: "https://github.com/vorce/kino_ecto"},
+      {:ecto, "~> 3.8"},
+      {:kino, "~> 0.7.0"},
+      {:logger_file_backend, "~> 0.0.10"},
+      {:ex_json_schema, "~> 0.10.1"}
     ]
   end
 
