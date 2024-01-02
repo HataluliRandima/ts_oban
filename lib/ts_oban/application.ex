@@ -10,6 +10,7 @@ defmodule TsOban.Application do
     children = [
       TsObanWeb.Telemetry,
       TsOban.Repo,
+      {Oban, Application.fetch_env!(:ts_oban, Oban)},
       {DNSCluster, query: Application.get_env(:ts_oban, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: TsOban.PubSub},
       # Start the Finch HTTP client for sending emails

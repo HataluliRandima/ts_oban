@@ -1,0 +1,15 @@
+<.header>
+  Daily rankings <%= @daily_rankings.id %>
+  <:subtitle>This is a daily_rankings record from your database.</:subtitle>
+  <:actions>
+    <.link href={~p"/daily_rankings/#{@daily_rankings}/edit"}>
+      <.button>Edit daily_rankings</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Ranked superhero ids"><%= @daily_rankings.ranked_superhero_ids %></:item>
+</.list>
+
+<.back navigate={~p"/daily_rankings"}>Back to daily_rankings</.back>

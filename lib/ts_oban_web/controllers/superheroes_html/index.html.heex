@@ -1,0 +1,25 @@
+<.header>
+  Listing Superheroes
+  <:actions>
+    <.link href={~p"/superheroes/new"}>
+      <.button>New Superheroes</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table id="superheroes" rows={@superheroes_collection} row_click={&JS.navigate(~p"/superheroes/#{&1}")}>
+  <:col :let={superheroes} label="Name"><%= superheroes.name %></:col>
+  <:col :let={superheroes} label="Power"><%= superheroes.power %></:col>
+  <:col :let={superheroes} label="Country"><%= superheroes.country %></:col>
+  <:action :let={superheroes}>
+    <div class="sr-only">
+      <.link navigate={~p"/superheroes/#{superheroes}"}>Show</.link>
+    </div>
+    <.link navigate={~p"/superheroes/#{superheroes}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={superheroes}>
+    <.link href={~p"/superheroes/#{superheroes}"} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action>
+</.table>

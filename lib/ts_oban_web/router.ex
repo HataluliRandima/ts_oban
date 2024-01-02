@@ -18,7 +18,14 @@ defmodule TsObanWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    resources "/superheroes", SuperheroesController
+    resources "/dates", DatesController
+    resources "/superhero_daily_statistics", SuperheroDailyStatisticsController
+    resources "/daily_rankings", DailyRankingsController
+
   end
+
+
 
   # Other scopes may use custom stacks.
   # scope "/api", TsObanWeb do

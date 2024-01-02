@@ -1,0 +1,8 @@
+<.header>
+  Edit Dates <%= @dates.id %>
+  <:subtitle>Use this form to manage dates records in your database.</:subtitle>
+</.header>
+
+<.dates_form changeset={@changeset} action={~p"/dates/#{@dates}"} />
+
+<.back navigate={~p"/dates"}>Back to dates</.back>

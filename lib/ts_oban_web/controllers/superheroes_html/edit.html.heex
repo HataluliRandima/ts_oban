@@ -1,0 +1,8 @@
+<.header>
+  Edit Superheroes <%= @superheroes.id %>
+  <:subtitle>Use this form to manage superheroes records in your database.</:subtitle>
+</.header>
+
+<.superheroes_form changeset={@changeset} action={~p"/superheroes/#{@superheroes}"} />
+
+<.back navigate={~p"/superheroes"}>Back to superheroes</.back>

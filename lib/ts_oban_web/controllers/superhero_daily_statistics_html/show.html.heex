@@ -1,0 +1,16 @@
+<.header>
+  Superhero daily statistics <%= @superhero_daily_statistics.id %>
+  <:subtitle>This is a superhero_daily_statistics record from your database.</:subtitle>
+  <:actions>
+    <.link href={~p"/superhero_daily_statistics/#{@superhero_daily_statistics}/edit"}>
+      <.button>Edit superhero_daily_statistics</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="People saved"><%= @superhero_daily_statistics.people_saved %></:item>
+  <:item title="Crises averted"><%= @superhero_daily_statistics.crises_averted %></:item>
+</.list>
+
+<.back navigate={~p"/superhero_daily_statistics"}>Back to superhero_daily_statistics</.back>

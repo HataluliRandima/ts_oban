@@ -1,0 +1,23 @@
+<.header>
+  Listing Dates
+  <:actions>
+    <.link href={~p"/dates/new"}>
+      <.button>New Dates</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table id="dates" rows={@dates_collection} row_click={&JS.navigate(~p"/dates/#{&1}")}>
+  <:col :let={dates} label="Date"><%= dates.date %></:col>
+  <:action :let={dates}>
+    <div class="sr-only">
+      <.link navigate={~p"/dates/#{dates}"}>Show</.link>
+    </div>
+    <.link navigate={~p"/dates/#{dates}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={dates}>
+    <.link href={~p"/dates/#{dates}"} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action>
+</.table>

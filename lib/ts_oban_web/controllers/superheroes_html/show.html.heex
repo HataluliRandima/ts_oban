@@ -1,0 +1,17 @@
+<.header>
+  Superheroes <%= @superheroes.id %>
+  <:subtitle>This is a superheroes record from your database.</:subtitle>
+  <:actions>
+    <.link href={~p"/superheroes/#{@superheroes}/edit"}>
+      <.button>Edit superheroes</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Name"><%= @superheroes.name %></:item>
+  <:item title="Power"><%= @superheroes.power %></:item>
+  <:item title="Country"><%= @superheroes.country %></:item>
+</.list>
+
+<.back navigate={~p"/superheroes"}>Back to superheroes</.back>

@@ -1,0 +1,15 @@
+<.simple_form :let={f} for={@changeset} action={@action}>
+  <.error :if={@changeset.action}>
+    Oops, something went wrong! Please check the errors below.
+  </.error>
+  <.input
+    field={f[:ranked_superhero_ids]}
+    type="select"
+    multiple
+    label="Ranked superhero ids"
+    options={[{"1", 1}, {"2", 2}]}
+  />
+  <:actions>
+    <.button>Save Daily rankings</.button>
+  </:actions>
+</.simple_form>

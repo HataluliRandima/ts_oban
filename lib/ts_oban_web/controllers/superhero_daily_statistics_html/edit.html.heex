@@ -1,0 +1,8 @@
+<.header>
+  Edit Superhero daily statistics <%= @superhero_daily_statistics.id %>
+  <:subtitle>Use this form to manage superhero_daily_statistics records in your database.</:subtitle>
+</.header>
+
+<.superhero_daily_statistics_form changeset={@changeset} action={~p"/superhero_daily_statistics/#{@superhero_daily_statistics}"} />
+
+<.back navigate={~p"/superhero_daily_statistics"}>Back to superhero_daily_statistics</.back>

@@ -1,0 +1,15 @@
+<.header>
+  Dates <%= @dates.id %>
+  <:subtitle>This is a dates record from your database.</:subtitle>
+  <:actions>
+    <.link href={~p"/dates/#{@dates}/edit"}>
+      <.button>Edit dates</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Date"><%= @dates.date %></:item>
+</.list>
+
+<.back navigate={~p"/dates"}>Back to dates</.back>

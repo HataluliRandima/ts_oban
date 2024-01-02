@@ -1,0 +1,23 @@
+<.header>
+  Listing Daily rankings
+  <:actions>
+    <.link href={~p"/daily_rankings/new"}>
+      <.button>New Daily rankings</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table id="daily_rankings" rows={@daily_rankings_collection} row_click={&JS.navigate(~p"/daily_rankings/#{&1}")}>
+  <:col :let={daily_rankings} label="Ranked superhero ids"><%= daily_rankings.ranked_superhero_ids %></:col>
+  <:action :let={daily_rankings}>
+    <div class="sr-only">
+      <.link navigate={~p"/daily_rankings/#{daily_rankings}"}>Show</.link>
+    </div>
+    <.link navigate={~p"/daily_rankings/#{daily_rankings}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={daily_rankings}>
+    <.link href={~p"/daily_rankings/#{daily_rankings}"} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action>
+</.table>

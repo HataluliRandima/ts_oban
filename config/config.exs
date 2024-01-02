@@ -11,6 +11,21 @@ config :ts_oban,
   ecto_repos: [TsOban.Repo],
   generators: [timestamp_type: :utc_datetime]
 
+
+config :ts_oban, Oban,
+  repo: TsOban.Repo,
+  plugins: [
+    Oban.Plugins.Pruner,
+    {Oban.Plugins.Cron,
+     crontab: [
+       {"* * * * *", TsOban.StatisticsGenerator},
+       {"@hourly", TsOban.StatisticsGenerator},
+       {"@reboot", TsOban.StatisticsGenerator},
+       {"@daily", TsOban.StatisticsGenerator}
+     ]}
+  ],
+  queues: [default: 10]
+
 # Configures the endpoint
 config :ts_oban, TsObanWeb.Endpoint,
   url: [host: "localhost"],

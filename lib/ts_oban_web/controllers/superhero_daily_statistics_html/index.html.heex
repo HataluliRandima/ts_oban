@@ -1,0 +1,24 @@
+<.header>
+  Listing Superhero daily statistics
+  <:actions>
+    <.link href={~p"/superhero_daily_statistics/new"}>
+      <.button>New Superhero daily statistics</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table id="superhero_daily_statistics" rows={@superhero_daily_statistics_collection} row_click={&JS.navigate(~p"/superhero_daily_statistics/#{&1}")}>
+  <:col :let={superhero_daily_statistics} label="People saved"><%= superhero_daily_statistics.people_saved %></:col>
+  <:col :let={superhero_daily_statistics} label="Crises averted"><%= superhero_daily_statistics.crises_averted %></:col>
+  <:action :let={superhero_daily_statistics}>
+    <div class="sr-only">
+      <.link navigate={~p"/superhero_daily_statistics/#{superhero_daily_statistics}"}>Show</.link>
+    </div>
+    <.link navigate={~p"/superhero_daily_statistics/#{superhero_daily_statistics}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={superhero_daily_statistics}>
+    <.link href={~p"/superhero_daily_statistics/#{superhero_daily_statistics}"} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action>
+</.table>
