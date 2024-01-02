@@ -1,0 +1,25 @@
+<.header>
+  Listing Coders
+  <:actions>
+    <.link href={~p"/coders/new"}>
+      <.button>New Coder</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table id="coders" rows={@coders} row_click={&JS.navigate(~p"/coders/#{&1}")}>
+  <:col :let={coder} label="Name"><%= coder.name %></:col>
+  <:col :let={coder} label="Email"><%= coder.email %></:col>
+  <:col :let={coder} label="Position"><%= coder.position %></:col>
+  <:action :let={coder}>
+    <div class="sr-only">
+      <.link navigate={~p"/coders/#{coder}"}>Show</.link>
+    </div>
+    <.link navigate={~p"/coders/#{coder}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={coder}>
+    <.link href={~p"/coders/#{coder}"} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action>
+</.table>

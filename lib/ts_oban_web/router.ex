@@ -22,10 +22,17 @@ defmodule TsObanWeb.Router do
     resources "/dates", DatesController
     resources "/superhero_daily_statistics", SuperheroDailyStatisticsController
     resources "/daily_rankings", DailyRankingsController
+    resources "/coders", CoderController
 
   end
 
+  if Mix.env == :dev do
+    # If using Phoenix
+    forward "/sent_emails", Bamboo.SentEmailViewerPlug
 
+    # If using Plug.Router, make sure to add the `to`
+    # forward "/sent_emails", to: Bamboo.SentEmailViewerPlug
+  end
 
   # Other scopes may use custom stacks.
   # scope "/api", TsObanWeb do

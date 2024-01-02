@@ -1,5 +1,9 @@
 import Config
 
+
+config :ts_oban, TsOban.ObMailer,
+  adapter: Bamboo.LocalAdapter
+
 # Configure your database
 config :ts_oban, TsOban.Repo,
   username: "postgres",

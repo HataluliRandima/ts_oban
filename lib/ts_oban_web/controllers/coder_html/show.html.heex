@@ -1,0 +1,17 @@
+<.header>
+  Coder <%= @coder.id %>
+  <:subtitle>This is a coder record from your database.</:subtitle>
+  <:actions>
+    <.link href={~p"/coders/#{@coder}/edit"}>
+      <.button>Edit coder</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Name"><%= @coder.name %></:item>
+  <:item title="Email"><%= @coder.email %></:item>
+  <:item title="Position"><%= @coder.position %></:item>
+</.list>
+
+<.back navigate={~p"/coders"}>Back to coders</.back>

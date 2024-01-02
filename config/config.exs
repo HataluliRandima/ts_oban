@@ -24,7 +24,7 @@ config :ts_oban, Oban,
        {"@daily", TsOban.StatisticsGenerator}
      ]}
   ],
-  queues: [default: 10]
+  queues: [default: 10, scheduled: 10, events: [limit: 200, dispatch_cooldown: 10]]
 
 # Configures the endpoint
 config :ts_oban, TsObanWeb.Endpoint,
