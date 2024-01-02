@@ -2,7 +2,10 @@ defmodule TsOban.Workers.DailyEmail do
 
   import Bamboo.Email
 
-  def digest_email() do
+  use Oban.Worker, queue: :events, max_attempts: 3, tags: ["user", "email"], unique: [period: 60]
+
+  @impl Oban.Worker
+  def perform(%Oban.Job{})  do
 
     manas = TsOban.Coders.listcodersfromlastday()
     IO.inspect(manas)
