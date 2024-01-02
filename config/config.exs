@@ -18,7 +18,7 @@ config :ts_oban, Oban,
     Oban.Plugins.Pruner,
     {Oban.Plugins.Cron,
      crontab: [
-       {"* * * * *", TsOban.StatisticsGenerator},
+    #   {"* * * * *", TsOban.StatisticsGenerator},
        {"* * * * *",TsOban.Workers.EmailJob},
        {"@hourly", TsOban.StatisticsGenerator},
        {"@reboot", TsOban.StatisticsGenerator},

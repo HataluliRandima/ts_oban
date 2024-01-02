@@ -2,7 +2,7 @@ defmodule TsOban.Workers.DailyEmail do
 
   import Bamboo.Email
 
-  use Oban.Worker, queue: :events, max_attempts: 3, tags: ["user", "email"], unique: [period: 60]
+  use Oban.Worker, queue: :default
 
   @impl Oban.Worker
   def perform(%Oban.Job{})  do
