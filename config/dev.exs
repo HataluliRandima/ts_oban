@@ -7,7 +7,7 @@ config :ts_oban, TsOban.ObMailer,
 # Configure your database
 config :ts_oban, TsOban.Repo,
   username: "postgres",
-  password: "Hata@randima.00",
+  password: "123456",
   hostname: "localhost",
   database: "ts_oban_dev",
   stacktrace: true,
